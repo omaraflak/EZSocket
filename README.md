@@ -37,11 +37,11 @@ Simple TCP/IP Socket class for JAVA (and Android)
 		}
 	});
 	
-## Fire event
+## Fire new event
 
 	socket.emit("your_event", "text", 42, "and as many objects as you want");
 	
-## Listen to event
+## Listening for event
 
 	socket.on("your_event", new EZSocket.Listener() {
 	    @Override
