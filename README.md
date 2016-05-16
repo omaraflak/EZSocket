@@ -20,6 +20,8 @@ Simple TCP/IP Socket class for JAVA (and Android)
 
 ## Initialise
 
+### From Client
+
 	EZSocket socket = new EZSocket("192.168.0.8", 1234, new EZSocket.EZSocketCallback() {
 		@Override
 		public void onConnect(EZSocket socket) {
@@ -35,6 +37,15 @@ Simple TCP/IP Socket class for JAVA (and Android)
 		public void onConnectError(final EZSocket socket, String message) {
 			// error while connecting
 		}
+	});
+	
+### From Server
+
+	EZSocket socket = new EZSocket(server.accept(), new EZSocket.EZSocketDisconnectCallback() {
+	    @Override
+	    public void onDisconnect(EZSocket socket, String message) {
+	    	// socket disconnected
+	    }
 	});
 	
 ## Fire new event
